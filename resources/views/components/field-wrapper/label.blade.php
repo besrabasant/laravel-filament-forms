@@ -9,7 +9,7 @@
     {{ $prefix }}
 
     <span @class([
-        'text-sm font-medium leading-4',
+        'text-sm font-medium leading-4 tracking-wider',
         'text-gray-700' => ! $error,
         'text-danger-700' => $error,
     ])>
