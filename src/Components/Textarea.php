@@ -17,7 +17,7 @@ class Textarea extends Field
 
     protected int | Closure | null $cols = null;
 
-    protected int | Closure | null $rows = null;
+    protected int | Closure | null $rows = 4;
 
     protected bool | Closure $shouldAutosize = false;
 
