@@ -85,7 +85,9 @@
             /**
              * @var \Filament\Forms\Components\Field  $formComponent
              */
+
             $formComponentClasses = \Illuminate\Support\Arr::toCssClasses([
+                'border-b pb-4 -mb-2 last:border-none last:pb-1 last:mb-0',
                 'max-w-xs' => $formComponent->getMaxWidth() === 'xs',
                 'max-w-sm' => $formComponent->getMaxWidth() === 'sm',
                 'max-w-md' => $formComponent->getMaxWidth() === 'md',
