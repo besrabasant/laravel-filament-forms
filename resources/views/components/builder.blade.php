@@ -12,6 +12,14 @@
         @if (count($containers = $getChildComponentContainers()))
             <ul class="space-y-2">
                 @foreach ($containers as $uuid => $item)
+                    @php
+                        /**
+                         * @var \Filament\Forms\ComponentContainer $item
+                         * @var \Filament\Forms\Components\Builder\Block $block
+                         */
+
+                        $block = $item->getParentComponent();
+                    @endphp
                     <li
                         x-data="{ isCreateButtonDropdownOpen: false, isCreateButtonVisible: false }"
                         x-on:click="isCreateButtonVisible = true"
@@ -86,7 +94,7 @@
                                             {{ $getCreateItemBetweenButtonLabel() }}
                                         </span>
 
-                                        <x-heroicon-o-plus class="w-5 h-5" />
+                                        <x-heroicon-o-plus class="w-5 h-5"/>
                                     </button>
 
                                     <x-forms::builder.block-picker
