@@ -15,6 +15,8 @@ class Block extends Component
 
     protected string | Closure | null $icon = null;
 
+    protected $template = null;
+
     final public function __construct(string $name)
     {
         $this->name($name);
@@ -32,6 +34,13 @@ class Block extends Component
         return $this;
     }
 
+    public function template(string|callable $template): static
+    {
+        $this->template = $template;
+
+        return $this;
+    }
+
     public function getIcon(): ?string
     {
         return $this->evaluate($this->icon);
@@ -39,9 +48,14 @@ class Block extends Component
 
     public function getLabel(): string
     {
-        return parent::getLabel() ?? (string) Str::of($this->getName())
+        return parent::getLabel() ?? (string)Str::of($this->getName())
                 ->kebab()
                 ->replace(['-', '_'], ' ')
                 ->ucfirst();
+    }
+
+    public function getTemplate(): ?string
+    {
+        return $this->evaluate($this->template);
     }
 }

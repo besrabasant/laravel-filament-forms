@@ -57,7 +57,7 @@ class Builder extends Field
 
                     $livewire = $component->getLivewire();
 
-                    $newUuid = (string) Str::uuid();
+                    $newUuid = (string)Str::uuid();
                     $newItem = [
                         'type' => $block,
                         'data' => [],
@@ -212,7 +212,7 @@ class Builder extends Field
     {
         return Arr::first(
             $this->getBlocks(),
-            fn (Block $block) => $block->getName() === $name,
+            fn(Block $block) => $block->getName() === $name,
         );
     }
 
@@ -245,7 +245,7 @@ class Builder extends Field
 
     public function hasBlock($name): bool
     {
-        return (bool) $this->getBlock($name);
+        return (bool)$this->getBlock($name);
     }
 
     public function isItemMovementDisabled(): bool

@@ -8,7 +8,10 @@
     :required="$isRequired()"
     :state-path="$getStatePath()"
 >
-    <div {{ $attributes->merge($getExtraAttributes())->class(['space-y-2', 'filament-forms-builder-component']) }}>
+{{--    <div class="flex">--}}
+{{--        <button type="button">Preview</button>--}}
+{{--    </div>--}}
+    <div {{ $attributes->merge($getExtraAttributes())->class(['space-y-4', 'filament-forms-builder-component']) }}>
         @if (count($containers = $getChildComponentContainers()))
             <ul class="space-y-2">
                 @foreach ($containers as $uuid => $item)
